@@ -262,13 +262,13 @@ def readBinaryPly(pcdFile, n_pts):
     plyData = plyData[headLine:]
     plyData = b"".join(plyData)
 
-    n_pts_loaded = len(plyData)/24
+    n_pts_loaded = len(plyData)/28
     assert(n_pts_loaded==n_pts)
     n_pts_loaded = int(n_pts_loaded)
 
     data = []
     for i in range(n_pts_loaded):
-        pts=struct.unpack('=fffBBBiiB', plyData[i*24:(i+1)*24])
+        pts=struct.unpack('=fffBBBiiBi', plyData[i*28:(i+1)*28])
         data.append(pts)
     data=np.asarray(data)
     return data
