@@ -10,7 +10,7 @@ root_dir = args.kitti_dir
 output_dir = args.output_dir
 
 for sequence in os.listdir(os.path.join(root_dir,"data_3d_raw")):
-    all_spcds = os.listdir(os.path.join(os.path.join(os.path.join(root_dir,"data_3d_semantics"),sequence),"static"))
+    all_spcds = os.listdir(os.path.join(os.path.join(os.path.join(root_dir,"data_3d_semantics/train"),sequence),"static"))
     all_spcds.sort()
     for i in range(len(all_spcds)):
         spcd = all_spcds[i]
