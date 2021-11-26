@@ -7,7 +7,7 @@ import open3d
 
 class PointAccumulation:
 
-    def __init__(self, root_dir, output_dir, sequence_, first_frame, last_frame, travel_padding, source_, min_dist_dense=0.02, verbose_=1, compute_labels = False):
+    def __init__(self, root_dir, output_dir, sequence_, first_frame, last_frame, travel_padding, source_, min_dist_dense=0.02, type="static", verbose_=1, compute_labels = False):
         self.rootDir = root_dir#root directory of the laser data
         self.outputDir = output_dir
         self.sequenceName = sequence_ #sequence name (the laser data will be saved in root_dir/sequence)
@@ -28,7 +28,7 @@ class PointAccumulation:
         self.baseDir = self.rootDir + "/data_3d_raw/" + self.sequenceName
         self.poseDir = self.rootDir + "/data_poses/" + self.sequenceName
         self.calibDir = self.rootDir + "/calibration"
-        self.superpcDir = self.rootDir + "/data_3d_semantics/train/" + self.sequenceName + "/static/"
+        self.superpcDir = self.rootDir + "/data_3d_semantics/train/" + self.sequenceName + f'/{type}/'
 
         self.Tr_cam_pose = [] #cam0x -> pose
         self.Tr_cam_velo = np.empty((4,4)) #cam00 -> velo

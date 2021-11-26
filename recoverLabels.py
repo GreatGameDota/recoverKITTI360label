@@ -25,7 +25,7 @@ for sequence in os.listdir(os.path.join(root_dir,"data_3d_raw")):
         partial_name = os.path.splitext(spcd)[0].split('_')
         first_frame = int(partial_name[0])
         last_frame = int(partial_name[1])
-        PA = PointAccumulation(root_dir, output_dir, sequence, first_frame, last_frame, 20, 1, 0.02, True, True)
+        PA = PointAccumulation(root_dir, output_dir, sequence, first_frame, last_frame, 20, 1, 0.02, "static", True, True)
         PA.createOutputDir()
         PA.loadTransformation()
         PA.getInterestedWindow()

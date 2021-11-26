@@ -19,7 +19,7 @@ source = args.data_source
 travel_padding = 20
 min_dist_dense = 0.02
 
-PA = PointAccumulation(root_dir, output_dir, sequence, first_frame, last_frame, travel_padding, source, min_dist_dense, True, False)
+PA = PointAccumulation(root_dir, output_dir, sequence, first_frame, last_frame, travel_padding, source, min_dist_dense, "static", True, False)
 
 print('Initialization Done!')
 
