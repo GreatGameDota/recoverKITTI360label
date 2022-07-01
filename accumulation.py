@@ -72,7 +72,8 @@ class PointAccumulation:
         self.output_file_pose = "%s/lidar_pose.dat" % self.outputPath
 
     def createOutputDir(self):
-        print("Output direction : " + self.outputPath)
+        if self.verbose:
+            print("Output direction : " + self.outputPath)
         return mkdir(self.outputPath)
 
     def loadTransformation(self):
@@ -380,7 +381,8 @@ class PointAccumulation:
                 Idx_out.append(self.globalIdx[k])
         self.Ts = Ts_out
         self.globalIdx = Idx_out
-        print("Loaded : " + str(np.sum(inRange)) + " points after range checking")
+        if self.verbose:
+            print("Loaded : " + str(np.sum(inRange)) + " points after range checking")
 
     '''
      * @brief WriteToFiles Write results to file
