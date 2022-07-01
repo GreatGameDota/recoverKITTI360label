@@ -106,7 +106,7 @@ def LoadTimestamp(filename):
     try:
         infile = open(filename)
     except:
-        print("Failed to open timestamps " + filename)
+#         print("Failed to open timestamps " + filename)
         return timestamps, False 
     
     for line in infile:
